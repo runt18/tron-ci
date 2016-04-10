@@ -196,7 +196,7 @@ class NewJobAPI(MethodView):
             aps_job_fields = dict((field.name, str(field)) for field in aps_job.trigger.fields)
             jobs.insert({
                 'aps_job_id': aps_job.id,
-                'repr': '%(minute)s %(hour)s %(day_of_week)s %(week)s %(day)s %(month)s' % aps_job_fields,
+                'repr': '{minute!s} {hour!s} {day_of_week!s} {week!s} {day!s} {month!s}'.format(**aps_job_fields),
                 'user_id': user_id,
                 'repo_id': repo_id,
                 'created_datetime': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

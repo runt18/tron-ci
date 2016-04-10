@@ -62,10 +62,10 @@ class CronValidator(object):
 
             except:
                 raise ValidationError(
-                    '%s field has an error. Check current syntax and if values are within range %d-%d.' % (
+                    '{0!s} field has an error. Check current syntax and if values are within range {1:d}-{2:d}.'.format(
                         field.name.title(),
                         self._min,
-                        self._max,
+                        self._max
                 ))
 
 
